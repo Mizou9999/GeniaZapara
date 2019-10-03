@@ -22,3 +22,8 @@ toggle.addEventListener("click", function() {
 	mobileNav.classList.toggle("toggle")
 	console.log("clicked")
 })
+// Paralex section
+AOS.init({
+	duration: 800,
+	easing: "ease-out"
+})

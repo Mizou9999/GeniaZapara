@@ -20,6 +20,10 @@ body {
 	width: 100%;
 	height: 100%;
 }
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
 header {
 	width: 100%;
 }
@@ -28,11 +32,18 @@ header {
 	width: 100%;
 	z-index: 3;
 }
+.solid {
+	background-color: var(--dark-color);
+	transition: all 0.6s ease-in-out;
+}
 nav {
-	height: 90px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 60px;
 	width: 100%;
 	z-index: 3;
-	position: relative;
+	transition: all 0.6s ease-in-out;
 }
 nav ul {
 	display: flex;
@@ -45,7 +56,7 @@ nav ul li {
 	font-family: Roboto;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 nav ul li a {
 	text-decoration: none;
@@ -54,12 +65,12 @@ nav ul li a {
 nav .logo {
 	font-family: Vollkorn SC;
 	font-weight: normal;
-	font-size: 2.8em;
-	line-height: 2.2rem;
+	font-size: 1.8em;
+	line-height: 1.7rem;
 	text-align: center;
 	letter-spacing: 0.1em;
-	padding-top: 5px;
 	color: white;
+	margin-top: 10px;
 }
 
 nav ul li::after {
@@ -88,40 +99,30 @@ nav ul li:nth-child(4):hover::after {
 }
 .toggle {
 	display: flex !important;
-	transition: height 0.5s ease;
+	transition: all 0.5s ease;
 }
 
 /*-------------------------------------- HERO ----------------*/
 .hero {
-	position: absolute;
-	top: 0;
-	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
-.hero::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background: url(/bg.jpg);
-	background-repeat: no-repeat;
+	background: linear-gradient(rgba(46, 39, 39, 0.644), rgba(0, 0, 0, 0.651)),
+		url(./bg.jpg);
 	background-size: cover;
 	background-position: center;
-	filter: brightness(50%);
+	background-attachment: fixed;
 }
 .hero-content {
-	position: relative;
 	display: flex;
 	color: var(--white);
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	transform: translateZ(0px);
+	animation: animateZ 2s infinite;
 }
 .hero-title {
 	font-size: 3em;
@@ -131,6 +132,13 @@ nav ul li:nth-child(4):hover::after {
 	font-size: 2em;
 	font-weight: 200;
 	margin-top: 1rem;
+}
+.imcontainer img {
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 .btn {
 	color: white;
@@ -152,6 +160,106 @@ nav ul li:nth-child(4):hover::after {
 	display: flex !important;
 	transition: height 0.5s ease;
 }
+
+/*------------------WHY ME ---------------------*/
+
+.why_me {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 auto;
+}
+.titre {
+	font-family: Roboto;
+	font-size: 2em;
+	color: var(--dark-color);
+	text-align: center;
+}
+.cards_container {
+	display: flex;
+	flex-direction: column;
+}
+.card {
+	display: flex;
+	width: 100%;
+	height: 350px;
+	align-items: center;
+}
+.card_img {
+	width: 40%;
+	height: 300px;
+	background-image: url(./images/service1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.even {
+	order: 2;
+}
+.card_content {
+	width: 60%;
+	height: 280px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0 20px;
+}
+.line {
+	border: 0.5px solid rgba(109, 109, 109, 0.158);
+	width: 50%;
+	margin: 0 auto;
+}
+.card_content h5 {
+	font-size: 2.5em;
+	color: var(--dark-color);
+	align-self: flex-start;
+}
+.card_content p {
+	font-size: 1em;
+	color: var(--dark-color);
+}
+.card_btn {
+	font-size: 18px;
+	color: var(--dark-color);
+	border: none;
+	background: none;
+	align-self: flex-start;
+	cursor: pointer;
+	font-weight: bold;
+}
+.card_btn:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 2px;
+	background: var(--main-color);
+	transition: width 0.3s;
+}
+.card_btn:hover::after {
+	width: 100%;
+	transition: width 0.3s;
+}
+
+.card2 {
+	background-image: url(./images/service2.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.card3 {
+	background-image: url(./images/service3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.card4 {
+	background: url(./images/service1.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 @media (max-width: 1060px) {
 	.hero-title {
 		font-size: 2.4em;
@@ -161,6 +269,41 @@ nav ul li:nth-child(4):hover::after {
 	}
 	.btn {
 		padding: 0.6rem 1.5rem;
+	}
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	.card_img {
+		width: 80%;
+		height: 200px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-top: 20px;
+	}
+	.card_content {
+		height: 300px;
+		width: 100%;
+	}
+	.card_content h5 {
+		font-size: 2em;
+		text-align: center;
+		align-self: center;
+	}
+	.card_content p {
+		font-size: 0.9em;
+	}
+	.card_content button {
+		align-self: center;
+		font-size: 1em;
+	}
+	.even {
+		order: 0;
 	}
 }
 @media (max-width: 905px) {
@@ -173,7 +316,9 @@ nav ul li:nth-child(4):hover::after {
 		width: 100%;
 		align-items: center;
 		height: 60px;
-		position: relative;
+		position: absolute;
+		top: 0;
+		left: 0;
 		background: white;
 	}
 	.logo_mobile {
@@ -206,5 +351,54 @@ nav ul li:nth-child(4):hover::after {
 		color: var(--dark-color);
 		text-decoration: none;
 		font-size: 18px;
+	}
+	.hero-title {
+		font-size: 2em;
+	}
+	.hero-subtitle {
+		font-size: 1em;
+	}
+	.btn {
+		padding: 0.6rem 1.3rem;
+	}
+}
+@media (max-width: 720px) {
+	.hero-title {
+		font-size: 2em;
+		margin: 0 50px;
+		text-align: center;
+	}
+	.hero-subtitle {
+		font-size: 1em;
+	}
+	.btn {
+		padding: 0.5rem 1.3rem;
+	}
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	.card_img {
+		width: 80%;
+		height: 200px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-top: 20px;
+	}
+	.card_content {
+		height: 300px;
+		width: 100%;
+	}
+	.card_content h5 {
+		font-size: 2em;
+		text-align: center;
+	}
+	.card_content p {
+		font-size: 12px;
 	}
 }
