@@ -24,6 +24,6 @@ toggle.addEventListener("click", function() {
 })
 // Paralex section
 AOS.init({
-	duration: 800,
+	duration: 600,
 	easing: "ease-out"
 })
