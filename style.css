@@ -289,10 +289,11 @@ nav ul li:nth-child(4):hover::after {
 		#393e3a,
 		#2b312c
 	);
+	margin-top: -20px;
 }
 .my_work_container h3 {
 	color: white;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 .services {
 	display: flex;
@@ -305,12 +306,12 @@ nav ul li:nth-child(4):hover::after {
 .my_work {
 	background: var(--main-color);
 	position: relative;
-	width: 34%;
+	width: 31%;
 	height: auto;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin: 40px 40px 40px 40px;
+	margin: 20px 40px 40px 40px;
 	flex-wrap: wrap;
 }
 
